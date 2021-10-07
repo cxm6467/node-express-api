@@ -4,12 +4,12 @@ const app = express();
 
 
 //  GET Request
-app.get('/getTest', function (req, res) => {});
+app.get('/getTest', function (req, res) {});
 
 
 //  POST Request
-app.post('postTest', function (req, res) => {});
+app.post('postTest', function (req, res) {});
 
 //  Set listen port
-app.list(4040);
+app.listen(4040);
 
