@@ -1,15 +1,12 @@
-const express = require("express");
+const express = require('express');
+
 const app = express();
 
-
-
 //  GET Request
-app.get('/getTest', function (req, res) {});
-
+app.get('/getTest', (req, res) => {});
 
 //  POST Request
-app.post('postTest', function (req, res) {});
+app.post('postTest', (req, res) => {});
 
 //  Set listen port
 app.listen(4040);
-
