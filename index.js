@@ -2,25 +2,14 @@ const express = require("express");
 const app = express();
 
 
-/**
-*
-*  GET Request
-*
-**
+
+//  GET Request
 app.get('/getTest', function (req, res) => {});
 
-/**
-*
-*  POST Request
-*
-**
 
+//  POST Request
 app.post('postTest', function (req, res) => {});
 
-/**
-*
-*  Set listen port
-*
-**
+//  Set listen port
 app.list(4040);
 
