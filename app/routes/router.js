@@ -1,26 +1,30 @@
 const express = require('express');
+const algorithims = require('../lib/algorithms');
 
 function routes() {
   const router = express.Router();
 
-  router.route('/api')
+  router.route('/')
     .get((req, res) => {
-      const response = JSON.parse("{\"msg\": \"Hello from root\",\"input\": "+JSON.stringify(req.query)+"}");
+      const response = {
+        "msg": "Welcome to the Algorithm Api.",
+        "version" : "0.0.1"
+      };
       return res.json(response);
     });
 
   router.route('/strings')
-  .get((req, res) => {
-    const response = JSON.parse("{\"msg\": \"Hello from string\",\"input\": "+JSON.stringify(req.query)+"}");
-    return res.json(response);
-  });
+    .get((req, res) => {
+      const response = algorithims.strings(req.query.algorithm, req.query.string);
+      return res.json(response);
+    });
 
   router.route('/arrays')
-  .get((req, res) => {
-    const response = JSON.parse("{\"msg\": \"Hello from arrays\",\"input\": "+JSON.stringify(req.query)+"}");
-    return res.json(response);
-  });
-  
+    .get((req, res) => {
+      const response = algorithims.strings(req.query.algorithm, req.query.array);
+      return res.json(response);
+    });
+
   return router;
 }
 

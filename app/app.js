@@ -9,7 +9,7 @@ const HOST = '0.0.0.0'
 const rootRouter = require('./routes/router')();
 
 //Hook up router to Express
-app.use("/", rootRouter);
+app.use("/api", rootRouter);
 
 //  Set listen port
 app.listen(PORT, HOST);
