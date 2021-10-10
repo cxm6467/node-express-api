@@ -1,2 +1,6 @@
-# node-express-api
-Node API layer for Algorithims
+# Algorithm Api
+
+## Technology Used
+* Node.js (14)
+* Express (Node Api framework)
+* Docker
