@@ -1,33 +1,18 @@
 const express = require('express');
 
+//Express
 const app = express();
+const PORT = 8080;
+const HOST = '0.0.0.0'
 
 //Routers
-const arrayRouter = express.Router();
-const stringRouter = express.Router();
+const rootRouter = require('./routes/router')();
 
-const baseAlgorithmApiPath = '/api/algorithms';
-
-//Routes
-arrayRouter.route('/arrays')
-    .get((req, res) => {
-        const response = {
-            msg: "Hello from array router."
-        };        
-        return res.json(response);
-    });
-
-stringRouter.route('/strings')
-    .get((req, res) => {
-        const response = {
-            msg: "Hello from string router."
-        };
-        return res.json(response);
-    });
-
-//Hook up routers to Express
-app.use(baseAlgorithmApiPath, arrayRouter);
-app.use(baseAlgorithmApiPath, stringRouter);
+//Hook up router to Express
+app.use("/", rootRouter);
 
 //  Set listen port
-app.listen(4444);
+app.listen(PORT, HOST);
+
+//DEBUG
+console.log(`Running on http://${HOST}:${PORT}`);
