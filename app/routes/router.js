@@ -5,25 +5,19 @@ function routes() {
 
   router.route('/api')
     .get((req, res) => {
-      const response = {
-        msg: "Hello from Root."
-      };
+      const response = JSON.parse("{\"msg\": \"Hello from root\",\"input\": "+JSON.stringify(req.query)+"}");
       return res.json(response);
     });
 
   router.route('/strings')
   .get((req, res) => {
-    const response = {
-      msg: "Hello from string router."
-    };
+    const response = JSON.parse("{\"msg\": \"Hello from string\",\"input\": "+JSON.stringify(req.query)+"}");
     return res.json(response);
   });
 
   router.route('/arrays')
   .get((req, res) => {
-    const response = {
-      msg: "Hello from array router."
-    };
+    const response = JSON.parse("{\"msg\": \"Hello from arrays\",\"input\": "+JSON.stringify(req.query)+"}");
     return res.json(response);
   });
   
