@@ -1,5 +1,8 @@
 const express = require('express');
-const algorithims = require('../lib/algorithms');
+
+const strings = require('../lib/algorithms/strings/strings');
+const arrays = require('../lib/algorithms/arrays/arrays');
+
 
 function routes() {
   const router = express.Router();
@@ -15,13 +18,13 @@ function routes() {
 
   router.route('/strings')
     .get((req, res) => {
-      const response = algorithims.strings(req.query.algorithm, req.query.string);
+      const response = strings(req.query.algorithm, req.query.input);
       return res.json(response);
     });
 
   router.route('/arrays')
     .get((req, res) => {
-      const response = algorithims.strings(req.query.algorithm, req.query.array);
+      const response = arrays(req.query.algorithm, req.query.input);
       return res.json(response);
     });
 
