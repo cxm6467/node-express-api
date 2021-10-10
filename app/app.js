@@ -1,15 +1,33 @@
 const express = require('express');
+
 const app = express();
 
-//  GET Request
-app.get('/getTest', (req, res) => {
-    res.json({
-        msg : "This is awesome"
-    });
-});
+//Routers
+const arrayRouter = express.Router();
+const stringRouter = express.Router();
 
-//  POST Request
-app.post('postTest', (req, res) => {});
+const baseAlgorithmApiPath = '/api/algorithms';
+
+//Routes
+arrayRouter.route('/arrays')
+    .get((req, res) => {
+        const response = {
+            msg: "Hello from array router."
+        };        
+        return res.json(response);
+    });
+
+stringRouter.route('/strings')
+    .get((req, res) => {
+        const response = {
+            msg: "Hello from string router."
+        };
+        return res.json(response);
+    });
+
+//Hook up routers to Express
+app.use(baseAlgorithmApiPath, arrayRouter);
+app.use(baseAlgorithmApiPath, stringRouter);
 
 //  Set listen port
 app.listen(4444);
