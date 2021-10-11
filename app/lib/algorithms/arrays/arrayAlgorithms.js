@@ -1,3 +1,5 @@
+/// TODO fix and validate array algorithms
+
 /**
  * Find a pair that sums up to k
  *
