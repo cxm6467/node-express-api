@@ -14,6 +14,8 @@
         "comma-dangle": "off",
         "no-plusplus": "off",
         "no-unused-vars": "warn",
-        "no-restricted-syntax": "warn"
+        "no-restricted-syntax": "warn",
+        "no-case-declarations": "warn",
+        "arrow-parens": "warn"
     }
 }

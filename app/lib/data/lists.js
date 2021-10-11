@@ -1,7 +1,8 @@
 function lists() {
   return {
     algorithms: {
-      arrays: ['find_pair',
+      arrays: [
+        'find_pair',
         'remove_duplicates',
         'find_duplicates',
         'maximum_subarray',
