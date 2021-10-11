@@ -3,5 +3,5 @@ The purpose of this Api is to learn and develop a Node based Api with Express.  
 
 ## Technology Used
 * Node.js (14)
-* Express (Node Api framework)
+* Express (Node.js Api package)
 * Docker
