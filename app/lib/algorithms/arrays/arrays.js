@@ -10,12 +10,30 @@ function arrays(algo, input) {
 
   switch (algo) {
     case 'find_pair':
-      const [arr, target] = input;
-      if (arr.length <= 0 || Number.isNaN(input)) {
+      try {
+        JSON.parse(input);
+      } catch (e) {
         result.result = `Error with input: ${input}`;
-      } else {
-        result.result = arrayAlgorithms.findPair(arr, target);
+        return result;
       }
+      result.input = JSON.parse(input);
+      const { arr, target } = JSON.parse(input);
+
+      if (arr.length <= 0 && !Number.isNaN(target)) {
+        result.result = `Error with input ${input}, please inspect and try again.`;
+        return result;
+      }
+
+      if (arr.length <= 0) {
+        result.result = `Error with array input: ${arr} is an empty array.`;
+        return result;
+      }
+
+      if (!Number.isNaN(target)) {
+        result.result = `Error with target input: ${target} is not a number.`;
+        return result;
+      }
+      result.result = arrayAlgorithms.findPair(arr, target);
       break;
     case 'remove_duplicates':
       result.result = arrayAlgorithms.removeDuplicates(input);
