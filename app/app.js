@@ -1,18 +1,18 @@
 const express = require('express');
 
-//Express
+// Express
 const app = express();
 const PORT = 8080;
-const HOST = '0.0.0.0'
+const HOST = '0.0.0.0';
 
-//Routers
+// Routers
 const rootRouter = require('./routes/router')();
 
-//Hook up router to Express
-app.use("/api", rootRouter);
+// Hook up router to Express
+app.use('/api', rootRouter);
 
 //  Set listen port
 app.listen(PORT, HOST);
 
-//DEBUG
+// DEBUG
 console.log(`Running on http://${HOST}:${PORT}`);

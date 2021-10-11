@@ -3,15 +3,14 @@ const express = require('express');
 const strings = require('../lib/algorithms/strings/strings');
 const arrays = require('../lib/algorithms/arrays/arrays');
 
-
 function routes() {
   const router = express.Router();
 
   router.route('/')
     .get((req, res) => {
       const response = {
-        "msg": "Welcome to the Algorithm Api.",
-        "version" : "0.0.1"
+        msg: 'Welcome to the Algorithm Api.',
+        version: '0.0.1',
       };
       return res.json(response);
     });
