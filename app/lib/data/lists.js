@@ -7,8 +7,9 @@ function lists() {
         'maximum_subarray',
         'find_peak',
         'product_except_self'],
-      stings: ['find_first_repeating_character',
-        'without_repeating_character',
+      strings: [
+        'find_first_repeating_character',
+        'string_without_repeating_character',
         'longest_substring_without_repeating',
         'longest_palindrome'],
 

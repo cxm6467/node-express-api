@@ -31,7 +31,6 @@ function routes() {
   router.route('/lists')
     .get((req, res) => {
       const response = lists();
-      cons
       return res.json(response);
     });
 

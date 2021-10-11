@@ -1,38 +1,28 @@
-const algorithms = [
-  'find_first_repeating_character',
-  'without_repeating_character',
-  'longest_substring_without_repeating',
-  'longest_palindrome'
-];
+const lists = require('../../data/lists')();
+const stringAlgorithms = require('./stringAlgorithms');
+
+const algorithms = lists.algorithms.strings;
+
 function strings(algo, input) {
-  const algoExists = algorithms[algo] === undefined ? false : algorithms[algo];
   const result = {};
-
   result.input = input;
+  result.algorithm = algo;
 
-  if (algoExists) {
-    result.result = `[${algo}] is not a valid algorithm...yet.`;
-  } else {
-    switch (algo) {
-      case 'find_first_repeating_character':
-        result.algorithm = algo;
-        // eslint-disable-next-line no-case-declarations
-        const firstRepeatingChar = function (str) {
-          const visited = {};
-          // eslint-disable-next-line no-restricted-syntax
-          for (const x of str) {
-            if (visited[x]) {
-              return x;
-            }
-            visited[x] = true;
-          }
-          return '\0';
-        };
-        result.result = firstRepeatingChar(input);
-        break;
-      default:
-        result.result = '[Default Case]';
-    }
+  switch (algo) {
+    case 'find_first_repeating_character':
+      result.result = stringAlgorithms.firstRepeatingChar(input);
+      break;
+    case 'string_without_repeating_character':
+      result.result = stringAlgorithms.withoutRepeating(input);
+      break;
+    case 'longest_substring_without_repeating':
+      result.result = stringAlgorithms.longestSubstringWithoutRepeating(input);
+      break;
+    case 'longest_palindrome':
+      result.result = stringAlgorithms.longestPalindrome(input);
+      break;
+    default:
+      result.result = `[${algo}] is not a valid algorithm, please try one of these: ${algorithms.join(', ')}.`;
   }
   return result;
 }
