@@ -2,6 +2,7 @@ const express = require('express');
 
 const strings = require('../lib/algorithms/strings/strings');
 const arrays = require('../lib/algorithms/arrays/arrays');
+const lists = require('../lib/data/lists');
 
 function routes() {
   const router = express.Router();
@@ -24,6 +25,13 @@ function routes() {
   router.route('/arrays')
     .get((req, res) => {
       const response = arrays(req.query.algorithm, req.query.input);
+      return res.json(response);
+    });
+
+  router.route('/lists')
+    .get((req, res) => {
+      const response = lists();
+      cons
       return res.json(response);
     });
 

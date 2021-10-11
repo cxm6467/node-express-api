@@ -1,8 +1,8 @@
 const algorithms = [
-  'first_repeating_character',
+  'find_first_repeating_character',
   'without_repeating_character',
   'longest_substring_without_repeating',
-  'longest_palindrome',
+  'longest_palindrome'
 ];
 function strings(algo, input) {
   const algoExists = algorithms[algo] === undefined ? false : algorithms[algo];
@@ -10,10 +10,29 @@ function strings(algo, input) {
 
   result.input = input;
 
-  if (!algoExists) {
+  if (algoExists) {
     result.result = `[${algo}] is not a valid algorithm...yet.`;
   } else {
-    result.result = input;
+    switch (algo) {
+      case 'find_first_repeating_character':
+        result.algorithm = algo;
+        // eslint-disable-next-line no-case-declarations
+        const firstRepeatingChar = function (str) {
+          const visited = {};
+          // eslint-disable-next-line no-restricted-syntax
+          for (const x of str) {
+            if (visited[x]) {
+              return x;
+            }
+            visited[x] = true;
+          }
+          return '\0';
+        };
+        result.result = firstRepeatingChar(input);
+        break;
+      default:
+        result.result = '[Default Case]';
+    }
   }
   return result;
 }
