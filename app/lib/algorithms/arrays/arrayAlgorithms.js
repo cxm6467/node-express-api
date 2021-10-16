@@ -46,13 +46,12 @@ function removeDuplicates(arr) {
 
 function findDuplicate(arr) {
   const visited = {};
-  for (const x of arr) {
-    if (visited[x]) {
-      return x;
-    }
-    visited[x] = true;
+  let duplicate;
+  for (let x = 0; x < arr.length; x++) {
+    if (visited[arr[x]]) duplicate = arr[x];
+    else visited[arr[x]] = true;
   }
-  return -Infinity;
+  return Math.max(-Infinity, duplicate);
 }
 
 /**
