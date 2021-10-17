@@ -2,8 +2,13 @@ const assert = require('assert');
 const strings = require('../lib/algorithms/strings/stringAlgorithms');
 const arrays = require('../lib/algorithms/arrays/arrayAlgorithms');
 
+/**
+ *
+ *  Array Algorithm  Tests
+ *
+ */
 
-describe('Arrays', () => {
+describe('Array Algorithms', () => {
   describe('#findPair(arr,target)', () => {
     it('Should return true if there is a pair of integers in the array that add to the target.', () => {
       assert.equal(arrays.findPair([1, 2, 3, 4, 5], 4), true);
@@ -34,5 +39,32 @@ describe('Arrays', () => {
 
   describe('#findProductExceptSelf(arr', () => {
     it('Should return the product of the array except for itself.')
-  })
+  });
+});
+
+/**
+ *
+ *  String Algorithm tests
+ *
+ */
+
+describe('String Algorithms', () => {
+  describe('#logestPalindrome(str)', () => {
+    it('Should return the length of the longest palindrome in the string.');
+  });
+
+  describe('#firstRepeatingChar(str)', () => {
+    it('Should return the first repeating character in the string');
+    it('Should return \'No repeating Chars\' if there isn\'t a repeating character in the string.');
+  });
+
+  describe('#withoutRepeatingChar(str)', () => {
+    it('Should return true if there are repeating characters in the string.');
+    it('Should return false if there aren\'t any repeating characters in the string.');
+  });
+
+  describe('#longestSubstringWithoutRepeating(str)', () => {
+    it('Should return the length of the longest substring without a repeating character.');
+    it('Should return \'0\' if the string is not provided.');
+  });
 });
