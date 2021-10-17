@@ -4,9 +4,9 @@
   "description": "Api for algorithms.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext .js",
-    "lint-fix": "eslint --fix . --ext .js",
+    "test": "mocha test/test.js",
+    "lint": "node_modules/.bin/eslint . --ext .js",
+    "lint-fix": "node_modules/.bin/eslint --fix . --ext .js",
     "start": "node app.js"
   },
   "repository": {

@@ -23,8 +23,8 @@ function findPair(arr, k) {
 /**
  * Remove duplicates from an array
  *
- * @param {int []} - Integer array to find a duplicate
- * @returns {string []} - Int array without duplicates
+ * @param {int [] } arr - Integer array to find a duplicate
+ * @returns { string []} - Int array without duplicates
  *
  */
 
@@ -33,13 +33,13 @@ function removeDuplicates(arr) {
   for (const x of arr) {
     visited[x] = true;
   }
-  return (Object.keys(visited));
+  return Array.from(Object.keys(visited));
 }
 
 /**
  * Find duplicate in array { assumes n+1 elements between 1 and n }
  *
- * @param {int []} - Integer array that has duplicates
+ * @param {int []} arr - Integer array that has duplicates
  * @returns {int} - Duplicate number
  *
  */
@@ -57,7 +57,7 @@ function findDuplicate(arr) {
 /**
  * Find max sub array
  *
- * @param {int []} - Integer array to check for max sub array
+ * @param {int []} arr - Integer array to check for max sub array
  * @returns {number} - Max Sum
  *
  */
@@ -75,16 +75,22 @@ function maximumSubarray(arr) {
 /**
  * Find peak in arr
  *
- * @param {int []} - Input array of int []
+ * @param {int []} arr - Input array of int []
+ * @param {int} n - length of array
  * @returns {number} - first peak of array
  *
  */
 
-function findPeak(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if ((i === 0 || arr[i] >= arr[i - 1]) && (i === arr.length - 1 || arr[i] >= arr[i + 1])) {
-      return i;
-    }
+function findPeak(arr, n = arr.length) {
+  // first or last element is peak element
+  if (n === 1) return 0;
+  if (arr[0] >= arr[1]) return 0;
+  if (arr[n - 1] >= arr[n - 2]) return n - 1;
+
+  // check for every other element
+  for (let i = 1; i < n - 1; i++) {
+    // check if the neighbors are smaller
+    if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1]) console.log(i); return i;
   }
   return -Infinity;
 }
@@ -92,7 +98,7 @@ function findPeak(arr) {
 /**
  * Get product of array except current index
  *
- * @param {int []} - Int array of values to check
+ * @param {int []} arr - Int array of values to check
  * @returns {int []} - Int [] with products
  */
 
