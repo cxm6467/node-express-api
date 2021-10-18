@@ -54,17 +54,32 @@ describe('String Algorithms', () => {
   });
 
   describe('#firstRepeatingChar(str)', () => {
-    it('Should return the first repeating character in the string');
-    it('Should return \'No repeating Chars\' if there isn\'t a repeating character in the string.');
+    it('Should return the first repeating character in the string', () => {
+      assert.equal(strings.firstRepeatingChar('bcdd'), 'd');
+    });
+    it('Should return \'No repeating Chars\' if there isn\'t a repeating character in the string.', () => {
+      assert.equal(strings.firstRepeatingChar(''), 'No repeating Chars');
+    });
   });
 
   describe('#withoutRepeatingChar(str)', () => {
-    it('Should return true if there are repeating characters in the string.');
-    it('Should return false if there aren\'t any repeating characters in the string.');
+    it('Should return false if there are repeating characters in the string.', () => {
+      assert.equal(strings.withoutRepeating('aab'), false);
+    });
+    it('Should return true if there aren\'t any repeating characters in the string.', () => {
+      assert.equal(strings.withoutRepeating('avb'), true);
+    });
   });
 
   describe('#longestSubstringWithoutRepeating(str)', () => {
-    it('Should return the length of the longest substring without a repeating character.');
-    it('Should return \'0\' if the string is not provided.');
+    it('Should return the length of the longest substring without a repeating character.', () => {
+      assert.equal(strings.longestSubstringWithoutRepeating('abcdefgg'), 7);
+    });
+    it('Should return \'0\' if the string is not provided.', () => {
+      assert.equal(strings.longestSubstringWithoutRepeating(''), 0);
+    });
+    it('Should return \'1\' if there is only one element in the string.', () => {
+      assert.equal(strings.longestSubstringWithoutRepeating('a'), 1);
+    });
   });
 });
