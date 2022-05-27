@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/cxm6467/node-express-api#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.2"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
